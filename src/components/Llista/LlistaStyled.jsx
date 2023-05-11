@@ -17,6 +17,11 @@ export const Contenidor = styled.div`
       padding: 1.2rem 1.5rem;
       background-color: ${({ theme }) => theme.colors.fons};
 
+      &:hover {
+        outline: 0.1rem solid ${({ theme }) => theme.colors.vora};
+        border-radius: 0.5rem;
+      }
+
       li:nth-child(1) {
         margin-bottom: 0.5rem;
         text-transform: uppercase;
@@ -24,42 +29,9 @@ export const Contenidor = styled.div`
       }
     }
   }
-`;
 
-export const ContenidorBotons = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 1rem;
-
-  button {
-    width: 14rem;
-    background-color: ${({ theme }) => theme.colors.fons};
-    padding: 1rem;
-    font-size: 1.3rem;
+  .link {
+    text-decoration: none;
     color: ${({ theme }) => theme.colors.lletraGlobal};
-    border: 0.1rem solid transparent;
-    border-radius: 0.5rem;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-
-  button:hover {
-    border-color: ${({ theme }) => theme.colors.vora};
-  }
-
-  span {
-    font-size: 1.5rem;
-    width: 1rem;
-  }
-
-  button[disabled] {
-    color: ${({ theme }) => theme.colors.deshabilitat};
-  }
-
-  button[disabled]:hover {
-    pointer-events: none;
   }
 `;

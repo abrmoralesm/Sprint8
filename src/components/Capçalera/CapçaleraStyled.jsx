@@ -17,7 +17,7 @@ export const Contenidor = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
     margin-left: -18rem;
     margin-right: 2rem;
   }
@@ -34,16 +34,19 @@ export const Contenidor = styled.div`
     background-color: ${({ theme }) => theme.colors.fons};
     padding: 1rem;
     font-size: 1.3rem;
+    border: none;
     color: ${({ theme }) => theme.colors.lletraGlobal};
-    border: 0.1rem solid transparent;
-    border-radius: 0.5rem;
+
     text-transform: uppercase;
     cursor: pointer;
+
+    &:hover {
+      outline: 0.1rem solid ${({ theme }) => theme.colors.vora};
+      border-radius: 0.5rem;
+    }
   }
 
-  button:hover {
-    border-color: ${({ theme }) => theme.colors.vora};
-  }
+ 
 
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {
     flex-direction: column;

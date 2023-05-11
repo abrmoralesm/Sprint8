@@ -1,8 +1,10 @@
 import { endPointsAPI } from "../../lib/constants/endPointsAPI";
 import { useFetchAPI } from "../../lib/hooks/useFetchAPI";
-import { Contenidor, ContenidorBotons } from "./LlistaStyled";
-import { useState } from 'react';
-import EnvLink from '../common/EnvLink';
+import { Contenidor } from "./LlistaStyled";
+import { useState } from "react";
+import { getStarshipId } from "../../lib/utils/getStarshipId";
+import EnvLink from "../common/EnvLink";
+import Paginacio from "../Paginacio/Paginacio";
 
 const Llista = () => {
   const [pagina, setPagina] = useState(1);
@@ -19,27 +21,18 @@ const Llista = () => {
         <>
           <ul>
             {dades.map((starship, index) => (
-              <div key={index}>                
-                <li>{starship.name}</li>
-                <li>{starship.model}</li>
+              <div key={index}>
+                <EnvLink
+                  to={`/starships/${getStarshipId(starship.url)}`}
+                  className='link'
+                >
+                  <li>{starship.name}</li>
+                  <li>{starship.model}</li>
+                </EnvLink>
               </div>
             ))}
           </ul>
-          <ContenidorBotons ContenidorBotons>
-            <button
-              onClick={() => setPagina((prev) => Math.max(prev - 1, 1))}
-              disabled={pagina === 1}>
-              Previous page
-            </button>
-            <span>{pagina}</span>
-            <button
-              onClick={() => {
-                if (next) setPagina((prev) => prev + 1);
-              }}
-              disabled={!next}>
-              Next page
-            </button>
-          </ContenidorBotons>
+          <Paginacio pagina={pagina} setPagina={setPagina} next={next} />
         </>
       )}
     </Contenidor>

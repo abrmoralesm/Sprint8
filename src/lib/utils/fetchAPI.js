@@ -1,12 +1,6 @@
 import axios from "axios";
 
-export const fetchAPI = async (
-  url,
-  pagina,
-  setData,
-  setError,
-  signal
-) => {
+export const fetchAPI = async (url, pagina, setDades, setError, signal) => {
   try {
     const resposta = await axios(
       {
@@ -16,7 +10,8 @@ export const fetchAPI = async (
       },
       { signal }
     );
-    setData(resposta.data);
+    setDades(resposta.data);
+    console.log(resposta.data);
     console.log("Dades carregades correctament");
   } catch (err) {
     setError(err.message);
