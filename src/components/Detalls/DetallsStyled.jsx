@@ -104,4 +104,8 @@ export const Contenidor = styled.div`
       }
     }
   }
+  div:nth-child(3) {
+    display: flex;
+    gap: 3rem;
+  }
 `;

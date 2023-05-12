@@ -1,5 +1,5 @@
 import axios from "axios";
-import { endPointsAPI } from "../constants/endPointsAPI";
+import { ENDPOINTSAPI } from "../constants/endPointsAPI";
 
 export const fetchAPIItemData = async (
   urlItem,
@@ -44,7 +44,7 @@ export const fetchAPIItemImg = async (
     console.log(respostaItem.data);
     console.log("Dades img item carregades correctament");
   } catch (err) {
-    setErrorItemImg(endPointsAPI.starshipNoImgAlt);
+    setErrorItemImg(ENDPOINTSAPI.starshipNoImgAlt);
     console.log("Error en la càrrega de dades img item");
   }
 };

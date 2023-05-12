@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Contenidor = styled.div`
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,8 +11,7 @@ export const Contenidor = styled.div`
     background-color: ${({ theme }) => theme.colors.fons};
     width: 70rem;
     padding: 4rem 3.25rem;
-    border: 0.25rem solid ${({ theme }) => theme.colors.vora};
-    border-radius: 10%;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;

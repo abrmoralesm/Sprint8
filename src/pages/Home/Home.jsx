@@ -2,7 +2,7 @@ import { Contenidor } from "../common/ContenidorPageStyled";
 import Benvinguda from "../../components/Benvinguda/Benvinguda";
 
 const Home = () => (
-  <Contenidor style={{ marginTop: "10rem" }}>
+  <Contenidor>
     <Benvinguda />
   </Contenidor>
 );

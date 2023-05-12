@@ -1,9 +1,15 @@
 import { Contenidor } from "./BenvingudaStyled";
 import { useNavigate } from "react-router-dom";
-import { endPointsAPI } from "../../lib/constants/endPointsAPI";
+import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
+import { publish } from "../../lib/utils/customEvents";
 
 const VistaError = () => {
   const navega = useNavigate();
+  const handleStarships = () => {
+    publish("starShipsClick");
+    navega(process.env.PUBLIC_URL + "/starships");
+  };
+
   return (
     <Contenidor>
       <div>
@@ -16,7 +22,7 @@ const VistaError = () => {
         </h2>
         <div>
           <img
-            src={endPointsAPI.starshipBenvinguda}
+            src={ENDPOINTSAPI.starshipBenvinguda}
             alt='starship benvinguda'
           />
         </div>
@@ -31,9 +37,7 @@ const VistaError = () => {
           future visits. May the Force be with you always!"
         </p>
       </div>
-      <button onClick={() => navega(process.env.PUBLIC_URL + "/starships")}>
-        Starships
-      </button>
+      <button onClick={handleStarships}>Starships</button>
     </Contenidor>
   );
 };

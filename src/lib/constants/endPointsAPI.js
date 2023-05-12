@@ -1,4 +1,4 @@
-export const endPointsAPI = {
+export const ENDPOINTSAPI = {
   starships: "https://swapi.dev/api/starships/",
   starshipsAlt: "https://swapi.py4e.com/api/starships/",
   starshipImg: "https://starwars-visualguide.com/assets/img/starships/",

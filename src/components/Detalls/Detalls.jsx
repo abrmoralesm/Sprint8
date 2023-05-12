@@ -1,17 +1,26 @@
-import { endPointsAPI } from "../../lib/constants/endPointsAPI";
+import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
 import { useFetchAPIItem } from "../../lib/hooks/useFetchAPIItem";
 import Missatge from "../common/Missatge";
 import { Contenidor } from "./DetallsStyled";
 import { useNavigate } from "react-router-dom";
+import { publish } from "../../lib/utils/customEvents";
 
 const Detalls = ({ starshipId }) => {
-  const urlItem = endPointsAPI.starships + starshipId + "/";
-  const urlItemImg = endPointsAPI.starshipImg + starshipId + ".jpg";
+  const urlItem = ENDPOINTSAPI.starships + starshipId + "/";
+  const urlItemImg = ENDPOINTSAPI.starshipImg + starshipId + ".jpg";
   console.log(urlItem, urlItemImg);
 
   const { dadesItem, loadingItem, errorItem, imgItem, loadingImg, errorImg } =
     useFetchAPIItem(urlItem, urlItemImg);
     const navega = useNavigate();
+    const handleStarships = () => {
+      publish("starShipsClick");
+      navega(process.env.PUBLIC_URL + "/starships");
+    };
+    const handleHome = () => {
+      publish("homeClick");
+      navega(process.env.PUBLIC_URL + "/");
+    };
 
   return (
     <>
@@ -69,9 +78,11 @@ const Detalls = ({ starshipId }) => {
               </li>
             </div>
           </ul>
-          <button onClick={() => navega(process.env.PUBLIC_URL + "/starships")}>
-            starships
-          </button>
+          <div>
+               <button onClick={handleHome}>Home</button>
+            <button onClick={handleStarships}>starships</button>
+            </div>
+          
         </Contenidor>
       )}
     </>
