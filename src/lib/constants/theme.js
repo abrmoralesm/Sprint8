@@ -6,6 +6,7 @@ export const THEME = {
   },
   colors: {
     fons: "#111",
+    fonsFosc: "#000",
     vora: "#ccc",
     divisor: "#444",
     lletraGlobal: "#eef",

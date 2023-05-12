@@ -18,9 +18,9 @@ function App() {
       <main>
         <Router />
       </main>
-      <footer>
-        {/* <Footer/> */}
-      </footer>
+     
+      <Footer/> 
+      
     </ThemeProvider>
   );
 }

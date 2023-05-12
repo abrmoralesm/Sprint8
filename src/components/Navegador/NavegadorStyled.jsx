@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Contenidor = styled.div`
-  background-color: ${({ theme }) => theme.colors.fons};
+  background-color: ${({ theme }) => theme.colors.fonsFosc};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ export const Contenidor = styled.div`
     height: 3.5rem;
     line-height: 3.5rem;
     text-align: center;
-    padding: 0 1.75rem;
+    padding: 1rem 1.75rem;
     border-style: solid;
     border-color: ${({ theme }) => theme.colors.divisor};
     border-width: 0 0.1rem;
@@ -48,5 +48,19 @@ export const Contenidor = styled.div`
   .actiu .link {
     color: ${({ theme }) => theme.colors.lletraGlobal};
     font-weight: 600;
+  }
+  @media (max-width: ${({ theme }) => theme.amplada.movil}) {
+    .link {
+      font-size: 1rem;
+    }
+    li {
+      padding: 0.75rem 1rem;
+    }
+    li:nth-child(1) {
+      width: 6.5rem;
+    }
+    li:nth-child(2) {
+      width: 9rem;
+    }
   }
 `;

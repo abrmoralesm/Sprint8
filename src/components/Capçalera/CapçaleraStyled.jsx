@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Contenidor = styled.div`
-  background-color: ${({ theme }) => theme.colors.fons};
+  background-color: ${({ theme }) => theme.colors.fonsFosc};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@ export const Contenidor = styled.div`
 
   button {
     width: 8rem;
-    background-color: ${({ theme }) => theme.colors.fons};
+    background-color: ${({ theme }) => theme.colors.fonsFosc};
     padding: 1rem;
     font-size: 1.3rem;
     border: none;
@@ -51,6 +51,11 @@ export const Contenidor = styled.div`
 
     div:nth-of-type(2) {
       margin: 0;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.amplada.movil}) {
+    button {
+      font-size: 1rem;
     }
   }
 `;

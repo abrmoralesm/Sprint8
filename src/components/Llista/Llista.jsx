@@ -4,6 +4,7 @@ import LlistaItem from "../LlistaItem/LlistaItem";
 import { useState } from "react";
 import { endPointsAPI } from "../../lib/constants/endPointsAPI";
 import Paginacio from "../Paginacio/PaginacioBotoMore";
+import Missatge from "../common/Missatge";
 
 const Llista = () => {
   const [pagina, setPagina] = useState(1);
@@ -12,19 +13,11 @@ const Llista = () => {
   console.log(dades, loading, error, pagina);
 
   return (
-    <>
-      {loading && (
-        <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          loading data...
-        </div>
-      )}
-      {error && (
-        <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          Error: {error}
-        </div>
-      )}
+    <div>
+      {loading && <Missatge text={"loading data..."} />}
+      {error && <Missatge text={"Error loading data:"} error={error} />}
       <Contenidor>
-        {dades && !loading && !error &&(
+        {dades && !loading && !error && (
           <>
             <ul>
               {dades.map((starship, index) => (
@@ -35,7 +28,7 @@ const Llista = () => {
           </>
         )}
       </Contenidor>
-    </>
+    </div>
   );
 };
 

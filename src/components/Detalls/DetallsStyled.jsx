@@ -33,15 +33,19 @@ export const Contenidor = styled.div`
     font-size: 1.3rem;
 
     h2 {
+      margin-left: 1.5rem;
       font-size: 1.8rem;
       font-weight: 600;
       text-transform: uppercase;
     }
 
     div {
+      background-color: ${({ theme }) => theme.colors.fons};
+      padding: 1.5rem;
+      padding-bottom: 0.25rem;
       display: flex;
       flex-flow: column wrap;
-      height: 20rem;
+      height: 21rem;
       gap: 1rem 4rem;
 
       li {
