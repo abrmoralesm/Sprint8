@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import fons from "../../assets/img/bg-stars.jpeg";
 
 export const GlobalStyles = createGlobalStyle`
+
 html {
   font-size: ${({ theme }) => theme.fontSizeGeneral};
 }

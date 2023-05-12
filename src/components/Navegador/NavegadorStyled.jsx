@@ -47,5 +47,6 @@ export const Contenidor = styled.div`
 
   .actiu .link {
     color: ${({ theme }) => theme.colors.lletraGlobal};
+    font-weight: 600;
   }
 `;

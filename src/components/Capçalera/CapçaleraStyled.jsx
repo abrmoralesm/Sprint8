@@ -36,7 +36,6 @@ export const Contenidor = styled.div`
     font-size: 1.3rem;
     border: none;
     color: ${({ theme }) => theme.colors.lletraGlobal};
-
     text-transform: uppercase;
     cursor: pointer;
 
@@ -45,8 +44,6 @@ export const Contenidor = styled.div`
       border-radius: 0.5rem;
     }
   }
-
- 
 
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {
     flex-direction: column;

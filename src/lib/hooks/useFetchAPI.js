@@ -9,11 +9,11 @@ export const useFetchAPI = (url, pagina) => {
   });
 
   const setDades = (dades) =>
-    setStarships({
-      dades,
+    setStarships((prev) => ({
+      dades: [...prev.dades, ...dades.results],
       loading: false,
       error: false,
-    });
+    }));
 
   const setError = (missatge) =>
     setStarships({
@@ -29,8 +29,8 @@ export const useFetchAPI = (url, pagina) => {
   }, [url, pagina]);
 
   return {
-    dades: starships.dades.results,
-    next: starships.dades.next,
+    dades: starships.dades,
+    next: starships.next,
     loading: starships.loading,
     error: starships.error,
   };

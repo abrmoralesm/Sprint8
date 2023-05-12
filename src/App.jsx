@@ -4,6 +4,7 @@ import { GlobalStyles } from "./components/GlobalStyles/GlobalStyles";
 import Capçalera from "./components/Capçalera/Capçalera";
 import Navegador from "./components/Navegador/Navegador";
 import Router from "./modules/Router";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
       <main>
         <Router />
       </main>
+      <footer>
+        {/* <Footer/> */}
+      </footer>
     </ThemeProvider>
   );
 }
