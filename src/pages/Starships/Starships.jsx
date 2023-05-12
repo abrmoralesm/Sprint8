@@ -1,4 +1,4 @@
-import { Contenidor } from "./StarshipsStyled.jsx";
+import { Contenidor } from "../common/ContenidorPageStyled";
 import Llista from "../../components/Llista/Llista";
 
 const starShips = () => (

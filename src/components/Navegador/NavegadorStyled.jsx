@@ -40,9 +40,13 @@ export const Contenidor = styled.div`
     font-size: 1.3rem;
     color: ${({ theme }) => theme.colors.deshabilitat};
   }
+  .link:hover {
+    color: ${({ theme }) => theme.colors.lletraGlobal};
+    font-weight: 500;
+  }
 
   .actiu {
-    border-bottom: 0.2rem solid #0d66d7;
+    border-bottom: 0.2rem solid ${({ theme }) => theme.colors.voraBlava};
   }
 
   .actiu .link {
@@ -57,10 +61,10 @@ export const Contenidor = styled.div`
       padding: 0.75rem 1rem;
     }
     li:nth-child(1) {
-      width: 6.5rem;
+      width: 6rem;
     }
     li:nth-child(2) {
-      width: 9rem;
+      width: 8rem;
     }
   }
 `;

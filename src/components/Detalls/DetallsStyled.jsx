@@ -4,10 +4,12 @@ export const Contenidor = styled.div`
   margin: 3rem 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 
   div:nth-child(1) {
-    border-bottom: 0.3rem solid #582e37;
+    border-bottom: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
     position: relative;
 
     img {
@@ -27,6 +29,7 @@ export const Contenidor = styled.div`
   }
 
   ul {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -66,6 +69,21 @@ export const Contenidor = styled.div`
         }
       }
     }
+  }
+
+  button {
+    width: 12rem;
+    background-color: ${({ theme }) => theme.colors.fons};
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: ${({ theme }) => theme.colors.lletraGlobal};
+    border: 0.1rem solid transparent;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  button:hover {
+    border-color: ${({ theme }) => theme.colors.vora};
   }
 
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {

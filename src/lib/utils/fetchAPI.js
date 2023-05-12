@@ -7,7 +7,7 @@ export const fetchAPI = async (url, pagina, setDades, setError, signal) => {
         method: "get",
         url: url,
         signal: signal,
-        params: { page: pagina, signal },
+        params: { page: pagina },
       },
     );
 

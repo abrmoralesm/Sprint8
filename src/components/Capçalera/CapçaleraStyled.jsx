@@ -55,6 +55,8 @@ export const Contenidor = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.amplada.movil}) {
     button {
+      width: 6rem;
+      padding: .75rem;
       font-size: 1rem;
     }
   }
