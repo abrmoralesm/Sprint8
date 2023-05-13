@@ -55,7 +55,7 @@ export const Contenidor = styled.div`
     flex-direction: column;
     gap: 2rem;
 
-    div2 {
+    .div2 {
       margin: 0;
     }
   }

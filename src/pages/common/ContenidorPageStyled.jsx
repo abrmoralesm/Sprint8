@@ -5,5 +5,5 @@ export const Contenidor = styled.div`
   max-width: 70rem;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
 `;

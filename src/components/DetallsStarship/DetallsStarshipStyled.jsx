@@ -2,25 +2,28 @@ import styled from "styled-components";
 
 export const Contenidor = styled.div`
   margin: 6rem 3rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 
-  div:nth-child(1) {
+  .contenidor-imatge-nau {
+    width: 100%;
     border-bottom: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
     position: relative;
 
-    img {
+    .imatge-nau {
       width: 100%;
       max-height: 40rem;
       object-fit: fill;
     }
 
-    p {
-      font-size: 2rem;
+    .missatge {
+      font-size: 1.3rem;
       font-weight: 600;
+      text-transform: uppercase;
       text-align: center;
       position: absolute;
       bottom: 2.5rem;
@@ -28,27 +31,29 @@ export const Contenidor = styled.div`
     }
   }
 
-  ul {
+  .llista-detalls-nau {
     width: 100%;
+    border-bottom: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 
-    h2 {
+    .nom-nau {
       margin-left: 1.5rem;
       font-size: 1.8rem;
       font-weight: 600;
       text-transform: uppercase;
     }
 
-    div {
+    .bloc-llista-detalls-nau {
+      width: 100%;
+      height: 22rem;
       background-color: ${({ theme }) => theme.colors.fons};
       padding: 1.5rem;
       padding-bottom: 0.25rem;
       display: flex;
       flex-flow: column wrap;
-      height: 21rem;
       gap: 1rem 4rem;
 
       li {
@@ -71,7 +76,7 @@ export const Contenidor = styled.div`
     }
   }
 
-  button {
+  .boto {
     width: 12rem;
     background-color: ${({ theme }) => theme.colors.fons};
     padding: 1rem;
@@ -82,30 +87,38 @@ export const Contenidor = styled.div`
     text-transform: uppercase;
     cursor: pointer;
   }
-  button:hover {
+
+  .boto:hover {
     border-color: ${({ theme }) => theme.colors.vora};
   }
 
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {
-    ul {
+    .llista-detalls-nau {
       align-items: center;
-    }
 
-    div:nth-child(2) {
-      width: 100%;
-      height: auto;
-      align-items: center;
-      flex-wrap: nowrap;
+      .bloc-llista-detalls-nau {
+        height: auto;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-bottom: 1.5rem;
 
-      li {
-        width: 60%;
-        display: flex;
-        justify-content: space-between;
+        li {
+          width: 60%;
+        }
       }
     }
   }
-  div:nth-child(3) {
-    display: flex;
-    gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.amplada.movilPetit}) {
+    li {
+      flex-direction: column;
+      gap: 0.25rem;
+
+      span:nth-child(2) {
+        flex: 1;
+        align-self: start;
+        font-size: 1.15rem;
+      }
+    }
   }
 `;

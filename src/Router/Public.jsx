@@ -1,4 +1,4 @@
-import { useAutenticacioContext } from "../../context/autentitcacioContext";
+import { useAutenticacioContext } from "../context/autentitcacioContext";
 import { Navigate, Outlet } from "react-router-dom";
 
 const Public = () => {

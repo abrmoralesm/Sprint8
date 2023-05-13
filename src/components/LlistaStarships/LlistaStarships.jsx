@@ -1,14 +1,13 @@
-import { useFetchAPI } from "../../lib/hooks/useFetchAPI";
-import { Contenidor } from "./LlistaStyled";
-import LlistaItem from "../LlistaItem/LlistaItem";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
+import { useFetchAPI } from "../../lib/hooks/useFetchAPI";
+import { publish } from "../../lib/utils/cutomEvents";
+import { Contenidor } from "./LlistaStarshipsStyled";
+import LlistaItem from "../LlistaItem/LlistaItem";
 import Paginacio from "../Paginacio/PaginacioBotoMore";
 import Missatge from "../common/Missatge";
-import { publish } from "../../lib/utils/cutomEvents";
 
-
-const Llista = () => {
+const LlistaStarships = () => {
   const [pagina, setPagina] = useState(1);
   const url = ENDPOINTSAPI.starships;
   const { dades, loading, error } = useFetchAPI(url, pagina);
@@ -35,4 +34,4 @@ const Llista = () => {
   );
 };
 
-export default Llista;
+export default LlistaStarships;

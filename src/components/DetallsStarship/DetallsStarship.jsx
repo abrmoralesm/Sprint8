@@ -1,18 +1,18 @@
 import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
 import { useFetchAPIItem } from "../../lib/hooks/useFetchAPIItem";
+import { Contenidor } from "./DetallsStarshipStyled";
 import Missatge from "../common/Missatge";
-import { Contenidor } from "./DetallsStyled";
 import EnvLink from "../common/EnvLink";
+import LlistaPilots from "../LlistaPilots/LlistaPilots";
 
-
-const Detalls = ({ starshipId }) => {
+const DetallsStarship = ({ starshipId }) => {
   const urlItem = ENDPOINTSAPI.starships + starshipId + "/";
   const urlItemImg = ENDPOINTSAPI.starshipImg + starshipId + ".jpg";
   console.log(urlItem, urlItemImg);
 
   const { dadesItem, loadingItem, errorItem, imgItem, loadingImg, errorImg } =
     useFetchAPIItem(urlItem, urlItemImg);
-  
+  console.log(dadesItem, imgItem);
 
   return (
     <>
@@ -21,13 +21,13 @@ const Detalls = ({ starshipId }) => {
       {errorItem && <Missatge text={"Error loading data:"} error={errorItem} />}
       {dadesItem && imgItem && !loadingItem && !errorItem && (
         <Contenidor>
-          <div>
-            <img src={imgItem} alt='starship-img' />
-            {errorImg && <p>No Image available...</p>}
+          <div className='contenidor-imatge-nau'>
+            <img className='imatge-nau' src={imgItem} alt='starship-img' />
+            {errorImg && <p className='missatge'>No Image available...</p>}
           </div>
-          <ul>
-            <h2>{dadesItem.name}</h2>
-            <div>
+          <ul className='llista-detalls-nau'>
+            <h2 className='nom-nau'>{dadesItem.name}</h2>
+            <div className='bloc-llista-detalls-nau'>
               <li>
                 <span>Model:</span> <span>{dadesItem.model}</span>
               </li>
@@ -38,15 +38,15 @@ const Detalls = ({ starshipId }) => {
                 <span>Class:</span> <span>{dadesItem.starship_class}</span>
               </li>
               <li>
-                <span>Cost:</span>{" "}
+                <span>Cost:</span>
                 <span>{dadesItem.cost_in_credits} credits</span>
               </li>
               <li>
-                <span>Speed:</span>{" "}
+                <span>Speed:</span>
                 <span>{dadesItem.max_atmosphering_speed} km/h</span>
               </li>
               <li>
-                <span>Hyperdrive Rating:</span>{" "}
+                <span>Hyperdrive Rating:</span>
                 <span>{dadesItem.hyperdrive_rating}</span>
               </li>
               <li>
@@ -62,7 +62,7 @@ const Detalls = ({ starshipId }) => {
                 <span>Passengers:</span> <span>{dadesItem.passengers}</span>
               </li>
               <li>
-                <span>Cargo Caliacity:</span>{" "}
+                <span>Cargo Caliacity:</span>
                 <span>{dadesItem.cargo_capacity} metric tons</span>
               </li>
               <li>
@@ -70,8 +70,9 @@ const Detalls = ({ starshipId }) => {
               </li>
             </div>
           </ul>
+          <LlistaPilots urlPilots={dadesItem.pilots} />
           <EnvLink to='/starships'>
-            <button>starships</button>
+            <button className='boto'>starships</button>
           </EnvLink>
         </Contenidor>
       )}
@@ -79,4 +80,4 @@ const Detalls = ({ starshipId }) => {
   );
 };
 
-export default Detalls;
+export default DetallsStarship;

@@ -3,6 +3,7 @@ export const THEME = {
   amplada: {
     tauleta: "768px",
     movil: "480px",
+    movilPetit: "350px"
   },
   colors: {
     fons: "#111",

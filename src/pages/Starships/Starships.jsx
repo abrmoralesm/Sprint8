@@ -1,10 +1,15 @@
 import { Contenidor } from "../common/ContenidorPageStyled";
-import Llista from "../../components/Llista/Llista";
+import { useEffect } from "react";
+import { publish } from "../../lib/utils/cutomEvents";
+import LlistaStarships from "../../components/LlistaStarships/LlistaStarships";
 
-const starShips = () => (
-  <Contenidor>
-    <Llista />
-  </Contenidor>
-);
+const StarShips = () => {
+  useEffect(() => publish("starShipsClick"), []);
 
-export default starShips;
+  return (
+    <Contenidor>
+      <LlistaStarships />
+    </Contenidor>
+  );
+};
+export default StarShips;
