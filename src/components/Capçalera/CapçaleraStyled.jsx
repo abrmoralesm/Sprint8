@@ -7,13 +7,13 @@ export const Contenidor = styled.div`
   align-items: center;
   padding: 2rem 0;
 
-  div:nth-of-type(1) {
+  div:nth-child(1) {
     width: 100%;
     display: block;
     text-align: center;
   }
 
-  div:nth-of-type(2) {
+  .div2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +27,12 @@ export const Contenidor = styled.div`
     min-height: 5rem;
     max-width: 40%;
     height: auto;
+  }
+
+  .link {
+    width: auto;
+    margin: 0;
+    padding: 0;
   }
 
   button {
@@ -49,15 +55,16 @@ export const Contenidor = styled.div`
     flex-direction: column;
     gap: 2rem;
 
-    div:nth-of-type(2) {
+    div2 {
       margin: 0;
     }
   }
+
   @media (max-width: ${({ theme }) => theme.amplada.movil}) {
     button {
       width: 6rem;
-      padding: .75rem;
       font-size: 1rem;
+      padding: 0.75rem;
     }
   }
 `;

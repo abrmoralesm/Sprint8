@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const VistaError = () => {
   const navega = useNavigate();
+  
   return (
     <Contenidor>
       <ContenidorImg>

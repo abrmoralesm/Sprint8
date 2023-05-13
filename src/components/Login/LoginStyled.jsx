@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Contenidor = styled.div`
   min-height: 100vh;
   max-width: 35rem;
-  margin: 3rem auto;
+  margin: 6rem auto;
   div:nth-child(1) {
     background-color: ${({ theme }) => theme.colors.fons};
     padding: 2rem 2.5rem;

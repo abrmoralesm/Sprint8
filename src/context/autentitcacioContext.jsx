@@ -2,6 +2,8 @@ import { createContext, useContext, useState } from "react";
 import { loginF } from "../lib/utils/login";
 import { signUpF } from "../lib/utils/singUp";
 import { logoutF } from "../lib/utils/logout";
+import { useNavigate } from "react-router-dom";
+
 
 export const AutenticacioContext = createContext();
 export const useAutenticacioContext = () => useContext(AutenticacioContext);
@@ -12,13 +14,14 @@ const AutenticacioContextProvider = ({ children }) => {
     usuaris: JSON.parse(localStorage.getItem("usuaris")) ?? [],
   });
   const { usuaris, usuariLoguejat } = dadesUsuaris;
+  const navega = useNavigate();
 
   const login = (usuari, claudePas) =>
-    loginF(usuari, claudePas, usuaris, setDadesUsuaris);
+    loginF(usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega);
   const signUp = (usuari, claudePas) =>
-    signUpF(usuari, claudePas, usuaris, setDadesUsuaris);
-  const logout = (usuariLoguejat, usuaris) =>
-    logoutF(usuariLoguejat, usuaris, setDadesUsuaris);
+    signUpF(usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega);
+  const logout = (usuariLoguejat) =>
+    logoutF(usuariLoguejat, dadesUsuaris, setDadesUsuaris);
 
   const value = {
     login,

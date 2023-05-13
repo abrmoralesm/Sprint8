@@ -2,11 +2,13 @@ import { useAutenticacioContext } from "../../context/autentitcacioContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Contenidor } from "../Login/LoginStyled";
+import { publish } from "../../lib/utils/cutomEvents";
+
 
 const Login = () => {
   const [usuari, setUsuari] = useState("");
   const [claudePas, setClaudePas] = useState("");
-  const { login, usuaris, usuariLoguejat } = useAutenticacioContext();
+  const { login } = useAutenticacioContext();
   const navega = useNavigate();
 
   const handleSubmit = (e) => {
@@ -14,10 +16,7 @@ const Login = () => {
     login(usuari, claudePas);
   };
 
-  useEffect(() => {
-    localStorage.setItem("usuaris", JSON.stringify(usuaris));
-    localStorage.setItem("usuariLoguejat", JSON.stringify(usuariLoguejat));
-  }, [usuaris, usuariLoguejat]);
+  useEffect(() => publish("none"),[]);
 
   return (
     <Contenidor>
@@ -46,7 +45,7 @@ const Login = () => {
         </form>
         <div>
           <p>Create an account?</p>
-          <button onClick={() => navega(process.env.PUBLIC_URL + "/signup")}>
+          <button onClick={() => navega(process.env.PUBLIC_URL + "/auth/signup")}>
             Sign up
           </button>
         </div>

@@ -6,18 +6,25 @@ import Error from "../pages/Error/Error";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
 import Logout from "../components/Logout/Logout";
+import Public from "../components/Router/Public";
+import Privat from "../components/Router/Privat";
 
 const Router = () => {
   return (
     <Routes>
       <Route path={process.env.PUBLIC_URL}>
-        <Route path='' element={<Home />} />
-        <Route path='login' element={<Login />} />
-        <Route path='logout' element={<Logout />} />
-        <Route path='signup' element={<Signup />} />
-        <Route path='starships' element={<Starships />} />
-        <Route path='starships/:starshipId' element={<Starship />} />
-        <Route path='*' element={<Error />} />
+        <Route path='' element={<Public />}>
+          <Route index element={<Home />} />
+          <Route path='auth/login' element={<Login />} />
+          <Route path='auth/signup' element={<Signup />} />
+          <Route path='*' element={<Error />} />
+        </Route>
+
+        <Route path='starships' element={<Privat />}>
+          <Route index element={<Starships />} />
+          <Route path='starship/:starshipId' element={<Starship />} />
+          <Route path='auth/logout' element={<Logout />} />
+        </Route>
       </Route>
     </Routes>
   );

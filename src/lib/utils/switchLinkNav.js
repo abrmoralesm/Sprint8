@@ -2,7 +2,7 @@ export const switchLinkNav = (state, action) => {
   switch (action.type) {
     case "homeClick":
       return { home: true, starShips: false };
-    case "starShipsClick":
+    case "none":
       return { home: false, starShips: true };
 
     case "starShipClick":

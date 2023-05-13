@@ -1,15 +1,8 @@
 import { Contenidor } from "./BenvingudaStyled";
-import { useNavigate } from "react-router-dom";
 import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
-import { publish } from "../../lib/utils/customEvents";
+import EnvLink from "../common/EnvLink";
 
-const VistaError = () => {
-  const navega = useNavigate();
-  const handleStarships = () => {
-    publish("starShipsClick");
-    navega(process.env.PUBLIC_URL + "/starships");
-  };
-
+const Benvinguda = () => {
   return (
     <Contenidor>
       <div>
@@ -37,9 +30,11 @@ const VistaError = () => {
           future visits. May the Force be with you always!"
         </p>
       </div>
-      <button onClick={handleStarships}>Starships</button>
+      <EnvLink to='/starships' className='link'>
+        <button>starships</button>
+      </EnvLink>
     </Contenidor>
   );
 };
 
-export default VistaError;
+export default Benvinguda;

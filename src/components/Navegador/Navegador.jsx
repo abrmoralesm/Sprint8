@@ -2,7 +2,7 @@ import { Contenidor } from "./NavegadorStyled";
 import EnvLink from "../common/EnvLink";
 import { useReducer, useEffect } from 'react';
 import { switchLinkNav } from '../../lib/utils/switchLinkNav';
-import { subscribe, unsubscribe } from "../../lib/utils/customEvents";
+import { subscribe, unsubscribe } from "../../lib/utils/cutomEvents";
 
 const Navegador = () => {
 
@@ -14,12 +14,12 @@ const Navegador = () => {
 
   useEffect(() => {
     subscribe("starShipsClick", () => dispatch({ type: "starShipsClick" }));
-    subscribe("starShipClick", () => dispatch({ type: "starShipClick" }));
+    subscribe("none", () => dispatch({ type: "none" }));
     subscribe("homeClick", () => dispatch({ type: "homeClick" }));
 
     return () => {
       unsubscribe("starShipsClick", () => dispatch({ type: "default" }));
-      unsubscribe("starShipClick", () => dispatch({ type: "default" }));
+      unsubscribe("none", () => dispatch({ type: "default" }));
       unsubscribe("homeClick", () => dispatch({ type: "default" }));
     };
   }, [state]);

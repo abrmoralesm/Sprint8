@@ -33,12 +33,14 @@ export const Contenidor = styled.div`
       border: none;
       width: 100%;
       padding: 1rem 0 0;
+
       img {
         max-width: 100%;
         object-fit: cover;
         height: 24rem;
       }
     }
+
     p {
       font-size: 1.5rem;
       line-height: 1.25;
@@ -47,6 +49,12 @@ export const Contenidor = styled.div`
       margin: -1.25rem 1rem 0.5rem;
     }
   }
+  .link {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
   button {
     width: 12rem;
     background-color: ${({ theme }) => theme.colors.fons};
