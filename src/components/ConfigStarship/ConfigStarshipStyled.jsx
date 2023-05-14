@@ -9,12 +9,12 @@ export const Container = styled.div`
   align-items: center;
   gap: 4rem;
 
-  .container-imatge-nau {
+  .container-image-starship {
     width: 100%;
     border-bottom: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
     position: relative;
 
-    .imatge-nau {
+    .image-starship {
       width: 100%;
       max-height: 40rem;
       object-fit: fill;
@@ -39,7 +39,7 @@ export const Container = styled.div`
     gap: 2rem;
     font-size: 1.4rem;
 
-    .nom-nau {
+    .name-starship {
       margin-left: 1.5rem;
       font-size: 1.8rem;
       font-weight: 600;

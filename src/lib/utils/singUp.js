@@ -1,20 +1,14 @@
 import { cercaUsuariSignUp } from "./cercaUsuari";
 
-export const signUpF = (
-  user,
-  keyPass,
-  dadesUsuaris,
-  setDadesUsuaris,
-  navega
-) => {
-  const { usuaris } = dadesUsuaris;
+export const signUpF = (user, keyPass, datesUsers, setDatesUsers, navega) => {
+  const { usuaris } = datesUsers;
   const index = cercaUsuariSignUp(usuaris, user);
 
   if (index === -1) {
-    setDadesUsuaris((prev) => {
+    setDatesUsers((prev) => {
       if (prev.usuaris)
         prev.usuaris.forEach((element) => (element.loguejat = false));
-      dadesUsuaris.usuaris = [
+      datesUsers.usuaris = [
         ...prev.usuaris,
         {
           user,
@@ -22,13 +16,13 @@ export const signUpF = (
           loguejat: true,
         },
       ];
-      dadesUsuaris.usuariLoguejat = dadesUsuaris.usuaris.length - 1;
-      localStorage.setItem("usuaris", JSON.stringify(dadesUsuaris.usuaris));
+      datesUsers.usuariLoguejat = datesUsers.usuaris.length - 1;
+      localStorage.setItem("usuaris", JSON.stringify(datesUsers.usuaris));
       localStorage.setItem(
         "usuariLoguejat",
-        JSON.stringify(dadesUsuaris.usuariLoguejat)
+        JSON.stringify(datesUsers.usuariLoguejat)
       );
-      return { ...dadesUsuaris };
+      return { ...datesUsers };
     });
     navega(process.env.PUBLIC_URL + "/starships");
     console.log(`New user ${user} has signed up!`);

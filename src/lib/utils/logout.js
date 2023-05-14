@@ -1,15 +1,15 @@
-export const logoutF = (usuariLoguejat, dadesUsuaris, setDadesUsuaris) => {
-  const { usuaris } = dadesUsuaris;
+export const logoutF = (usuariLoguejat, datesUsers, setDatesUsers) => {
+  const { usuaris } = datesUsers;
   const user = usuaris[usuariLoguejat].user;
-  setDadesUsuaris((prev) => {
-    dadesUsuaris.usuariLoguejat = null;
-    dadesUsuaris.usuaris[usuariLoguejat].loguejat = false;
-    localStorage.setItem("usuaris", JSON.stringify(dadesUsuaris.usuaris));
+  setDatesUsers((prev) => {
+    datesUsers.usuariLoguejat = null;
+    datesUsers.usuaris[usuariLoguejat].loguejat = false;
+    localStorage.setItem("usuaris", JSON.stringify(datesUsers.usuaris));
     localStorage.setItem(
       "usuariLoguejat",
-      JSON.stringify(dadesUsuaris.usuariLoguejat)
+      JSON.stringify(datesUsers.usuariLoguejat)
     );
-    return { ...dadesUsuaris };
+    return { ...datesUsers };
   });
   console.log(`User ${user} has logged out!`);
 };

@@ -35,11 +35,11 @@ describe("Signup testing", () => {
     });
 
     test("Comprobar que todos los campos están disponbles para recibir  texto", () => {
-      const { usuariInput, claudePasInput } = eventTests({
+      const { userInput, claudePasInput } = eventTests({
         user: "Nombre user X",
         password: "Password X",
       });
-      expect(usuariInput.value).toBe("Nombre user X");
+      expect(userInput.value).toBe("Nombre user X");
       expect(claudePasInput.value).toBe("Password X");
     });
   });

@@ -59,7 +59,7 @@ export const useFetchAPIItem = (urlItem, urlItemImg) => {
   }, [urlItemImg]);
 
   return {
-    dadesItem: item.dates,
+    datasItem: item.dates,
     loadingItem: item.loading,
     errorItem: item.error,
     imgItem: img.src,

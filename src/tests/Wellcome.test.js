@@ -31,7 +31,7 @@ describe("Wellcome testing", () => {
 
   test("Comprobar que se renderizan las imágenes", () => {
     expect(screen.getByRole("img")).toBeInTheDocument();
-    expect(screen.getByAltText(/starship benvinguda/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/starship wellcome/i)).toBeInTheDocument();
   });
 
   test("Comprobar que se renderitza el botón y el enlace a 'starships'", () => {

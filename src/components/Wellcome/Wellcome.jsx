@@ -10,8 +10,8 @@ const Wellcome = () => (
         Greetings, Star Wars fans! We are thrilled to have you visit our Star
         Wars website and embark on this journey through the galaxy
       </h2>
-      <div className='imatge-nau'>
-        <img src={ENDPOINTSAPI.starshipBenvinguda} alt='starship benvinguda' />{" "}
+      <div className='image-starship'>
+        <img src={ENDPOINTSAPI.starshipBenvinguda} alt='starship wellcome' />{" "}
         Log
       </div>
       <p>

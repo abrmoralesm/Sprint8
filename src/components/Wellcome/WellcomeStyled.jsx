@@ -33,7 +33,7 @@ export const Container = styled.div`
       letter-spacing: 0.1rem;
     }
 
-    .imatge-nau {
+    .image-starship {
       border: none;
       border-radius: 0.75rem;
       margin: 0 1.5rem;

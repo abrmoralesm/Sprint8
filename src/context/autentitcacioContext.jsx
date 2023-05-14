@@ -8,19 +8,19 @@ export const AutenticacioContext = createContext();
 export const useAutenticacioContext = () => useContext(AutenticacioContext);
 
 const AutenticacioContextProvider = ({ children }) => {
-  const [dadesUsuaris, setDadesUsuaris] = useState({
+  const [datesUsers, setDatesUsers] = useState({
     usuariLoguejat: JSON.parse(localStorage.getItem("usuariLoguejat")) ?? null,
     usuaris: JSON.parse(localStorage.getItem("usuaris")) ?? [],
   });
-  const { usuaris, usuariLoguejat } = dadesUsuaris;
+  const { usuaris, usuariLoguejat } = datesUsers;
   const navega = useNavigate();
 
   const login = (user, keyPass) =>
-    loginF(user, keyPass, dadesUsuaris, setDadesUsuaris, navega);
+    loginF(user, keyPass, datesUsers, setDatesUsers, navega);
   const signUp = (user, keyPass) =>
-    signUpF(user, keyPass, dadesUsuaris, setDadesUsuaris, navega);
+    signUpF(user, keyPass, datesUsers, setDatesUsers, navega);
   const logout = (usuariLoguejat) =>
-    logoutF(usuariLoguejat, dadesUsuaris, setDadesUsuaris);
+    logoutF(usuariLoguejat, datesUsers, setDatesUsers);
 
   const value = {
     login,
