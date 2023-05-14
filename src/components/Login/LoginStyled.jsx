@@ -6,6 +6,7 @@ export const Contenidor = styled.div`
   margin: 6rem auto;
   div:nth-child(1) {
     background-color: ${({ theme }) => theme.colors.fons};
+    margin: 0 3rem;
     padding: 2rem 2.5rem;
     border-radius: 1rem;
     display: flex;
@@ -42,7 +43,6 @@ export const Contenidor = styled.div`
         letter-spacing: 0.15rem;
       }
       input {
-        width: 25rem;
         margin-top: 0.5rem;
         background-color: ${({ theme }) => theme.colors.fons};
         padding: 1rem;
@@ -50,7 +50,6 @@ export const Contenidor = styled.div`
         color: ${({ theme }) => theme.colors.lletraGlobal};
         border: 0.1rem solid ${({ theme }) => theme.colors.voraBlava};
         border-radius: 0.5rem;
-        text-transform: uppercase;
       }
       input:hover {
         border-color: ${({ theme }) => theme.colors.vora};
@@ -71,6 +70,9 @@ export const Contenidor = styled.div`
         padding: 1rem;
         font-size: 1.1rem;
       }
+    }
+    .missatge {
+      color: ${({ theme }) => theme.colors.missatge};
     }
   }
 `;

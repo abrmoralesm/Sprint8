@@ -7,21 +7,24 @@ export const Contenidor = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3rem;
+
   div {
     background-color: ${({ theme }) => theme.colors.fons};
-    width: 70rem;
+    margin: 0 3rem;
     padding: 4rem 3.25rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
       letter-spacing: 0.25rem;
     }
+
     h2 {
       font-size: 1.5rem;
       font-weight: bold;
@@ -29,26 +32,27 @@ export const Contenidor = styled.div`
       text-transform: uppercase;
       letter-spacing: 0.1rem;
     }
-    div {
+
+    .imatge-nau {
       border: none;
-      width: 100%;
-      padding: 1rem 0 0;
+      border-radius: 0.75rem;
+      margin: 0 1.5rem;
+      padding: 0;
 
       img {
         max-width: 100%;
         object-fit: cover;
-        height: 24rem;
       }
     }
 
     p {
       font-size: 1.5rem;
       line-height: 1.25;
-      line-height: 1.25;
       text-align: justify;
       margin: -1.25rem 1rem 0.5rem;
     }
   }
+
   .link {
     width: auto;
     margin: 0;
@@ -66,6 +70,7 @@ export const Contenidor = styled.div`
     text-transform: uppercase;
     cursor: pointer;
   }
+
   button:hover {
     border-color: ${({ theme }) => theme.colors.vora};
   }

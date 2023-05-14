@@ -4,12 +4,13 @@ export const Contenidor = styled.div`
   margin-top: 6rem;
   background-color: ${({ theme }) => theme.colors.fonsFosc};
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
   text-align: center;
-  padding: 4rem 4rem 3rem;
   font-size: 1.3rem;
+  padding: 4rem 4rem 3rem;
 
   a {
     text-decoration: none;

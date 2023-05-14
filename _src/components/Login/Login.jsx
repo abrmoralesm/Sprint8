@@ -1,53 +1,53 @@
-import { useValidacio } from "../../lib/hooks/useValidacio";
+import { useAutenticacioContext } from "../../context/autentitcacioContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Contenidor } from "./SignupStyled";
+import { Contenidor } from "./LoginStyled";
 import { publish } from "../../lib/utils/cutomEvents";
 
-const SignUp = () => {
+const Login = () => {
   const [usuari, setUsuari] = useState("");
   const [claudePas, setClaudePas] = useState("");
-  const id = "signUp";
-  const { errorUsuari, errorClaudePas, errorInvalid, handleSubmit } =
-    useValidacio(usuari, setUsuari, claudePas, setClaudePas, id);
+  const { login } = useAutenticacioContext();
   const navega = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(usuari, claudePas);
+  };
 
   useEffect(() => publish("none"), []);
 
   return (
     <Contenidor>
       <div>
-        <h2>Sign Up</h2>
+        <h2>Log in</h2>
         <form onSubmit={handleSubmit}>
-          {errorInvalid && <h3 className='missatge'>{errorInvalid}</h3>}
           <label htmlFor='usuari'>
             User
             <input
               type='text'
               name='usuari'
               onChange={(e) => setUsuari(e.target.value)}
-              value={usuari}
+              required
             />
           </label>
-          {errorUsuari && <p className='missatge'>{errorUsuari}</p>}
           <label htmlFor='usuari'>
             Password
             <input
               type='password'
               name='claudePas'
               onChange={(e) => setClaudePas(e.target.value)}
-              value={claudePas}
+              required
             />
           </label>
-          {errorClaudePas && <p className='missatge'>{errorClaudePas}</p>}
-          <button type='submit'>Create User</button>
+          <button type='submit'>Open Session</button>
         </form>
         <div>
-          <p>Already have an account?</p>
+          <p>Create an account?</p>
           <button
-            onClick={() => navega(process.env.PUBLIC_URL + "/auth/login")}
+            onClick={() => navega(process.env.PUBLIC_URL + "/auth/signup")}
           >
-            Log In
+            Sign up
           </button>
         </div>
       </div>
@@ -55,5 +55,4 @@ const SignUp = () => {
   );
 };
 
-
-export default SignUp;
+export default Login;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Contenidor = styled.div`
+  margin: auto;
   width: 18rem;
   border: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
   border-radius: 0.5rem;
@@ -70,6 +71,9 @@ export const Contenidor = styled.div`
         flex: 1;
         align-self: start;
         font-size: 1.15rem;
+      }
+      span:nth-child(2) {
+        padding-left: 0.5rem;
       }
     }
   }

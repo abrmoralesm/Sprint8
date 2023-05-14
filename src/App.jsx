@@ -8,7 +8,7 @@ import AutenticacioContextProvider from "./context/autentitcacioContext";
 import Router from "./Router/Router";
 
 
-function App() {
+const App = () => {
     	return (
 		<ThemeProvider theme={THEME}>
 			<GlobalStyles />

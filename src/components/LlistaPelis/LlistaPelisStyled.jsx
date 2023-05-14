@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Contenidor = styled.div`
   width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   border-bottom: 0.3rem solid ${({ theme }) => theme.colors.voraVermella};
-  .titol-pilot {
+  .titol-peli {
     margin-left: 1.5rem;
     font-size: 1.8rem;
     font-weight: 600;
@@ -20,16 +21,16 @@ export const Contenidor = styled.div`
     padding-left: 1.5rem;
     text-transform: uppercase;
   }
-  .llista-pilots {
+  .llista-pelis {
     background-color: ${({ theme }) => theme.colors.fons};
     padding: 2rem 1.5rem;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(auto-fill, 18rem);
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3rem;
   }
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {
-    .titol-pilot {
+    .titol-peli {
       align-self: center;
     }
   }

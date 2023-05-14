@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchAPI } from "../utils/fetchAPI";
 
 export const useFetchAPI = (url, pagina) => {
-  const [starships, setStarships] = useState({
+ 
+	const [starships, setStarships] = useState({
     dades: [],
     loading: true,
     error: false,

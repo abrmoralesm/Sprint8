@@ -7,7 +7,7 @@ export const Contenidor = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 
   .contenidor-imatge-nau {
     width: 100%;
@@ -118,6 +118,7 @@ export const Contenidor = styled.div`
         flex: 1;
         align-self: start;
         font-size: 1.15rem;
+        padding-left: 0.5rem
       }
     }
   }

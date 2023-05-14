@@ -7,7 +7,6 @@ import Missatge from "../common/Missatge";
 const DetallsPilot = ({ urlPilot }) => {
   const pilotId = getItemId(urlPilot);
   const urlPilotImg = ENDPOINTSAPI.pilotsImg + pilotId + ".jpg";
-  console.log(urlPilot, urlPilotImg);
 
   const { dadesItem, loadingItem, errorItem, imgItem, loadingImg, errorImg } =
     useFetchAPIItem(urlPilot, urlPilotImg);
@@ -18,7 +17,7 @@ const DetallsPilot = ({ urlPilot }) => {
       {loadingItem && <Missatge text={"loading data..."} />}
       {errorItem && <Missatge text={"Error loading data:"} error={errorItem} />}
       {dadesItem && imgItem && !loadingItem && !errorItem && (
-        <Contenidor className='element'>
+        <Contenidor>
           <p className='nom-pilot'>{dadesItem.name}</p>
           <div className='contenidor-imatge-pilot'>
             <img className='imatge-pilot' src={imgItem} alt='pilot-img' />

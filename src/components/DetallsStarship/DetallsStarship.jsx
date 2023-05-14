@@ -4,15 +4,14 @@ import { Contenidor } from "./DetallsStarshipStyled";
 import Missatge from "../common/Missatge";
 import EnvLink from "../common/EnvLink";
 import LlistaPilots from "../LlistaPilots/LlistaPilots";
+import LlistaPelis from "../LlistaPelis/LlistaPelis";
 
 const DetallsStarship = ({ starshipId }) => {
   const urlItem = ENDPOINTSAPI.starships + starshipId + "/";
   const urlItemImg = ENDPOINTSAPI.starshipImg + starshipId + ".jpg";
-  console.log(urlItem, urlItemImg);
 
   const { dadesItem, loadingItem, errorItem, imgItem, loadingImg, errorImg } =
     useFetchAPIItem(urlItem, urlItemImg);
-  console.log(dadesItem, imgItem);
 
   return (
     <>
@@ -71,6 +70,7 @@ const DetallsStarship = ({ starshipId }) => {
             </div>
           </ul>
           <LlistaPilots urlPilots={dadesItem.pilots} />
+          <LlistaPelis urlPelis={dadesItem.films} />
           <EnvLink to='/starships'>
             <button className='boto'>starships</button>
           </EnvLink>

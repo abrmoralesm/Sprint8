@@ -1,14 +1,8 @@
-import { cercaUsuari } from "./cercaUsuari";
+import { cercaUsuariSignUp } from "./cercaUsuari";
 
-export const signUpF = (
-  usuari,
-  claudePas,
-  dadesUsuaris,
-  setDadesUsuaris,
-  navega
-) => {
+export const signUpF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega) => {
   const { usuaris } = dadesUsuaris;
-  const index = cercaUsuari(usuaris, usuari, claudePas);
+  const index = cercaUsuariSignUp(usuaris, usuari);
 
   if (index === -1) {
     setDadesUsuaris((prev) => {
@@ -30,7 +24,11 @@ export const signUpF = (
       );
       return { ...dadesUsuaris };
     });
-    console.log(`New user ${usuari} has signed up!`);
     navega(process.env.PUBLIC_URL + "/starships");
-  } else console.log(`User ${usuari} already exists!`);
+    console.log(`New user ${usuari} has signed up!`);
+    return null;
+  } else {
+    console.log(`User ${usuari} already exists!`);
+    return `User ${usuari} already exists!`;
+  }
 };
