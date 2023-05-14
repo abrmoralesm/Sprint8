@@ -1,14 +1,14 @@
 import Schema from "validate";
 
 export const schema = new Schema({
-  usuari: {
+  user: {
     type: String,
     required: true,
     match: /^[A-Za-z0-9_-]{4,12}$/,
     message:
       'User name must be minimum 4 characters long and up to 12, with letters & numbers and/or "_", "-"',
   },
-  claudePas: {
+  keyPass: {
     type: String,
     required: true,
     match: /^[A-Za-z0-9_-]{8}$/,
@@ -17,5 +17,5 @@ export const schema = new Schema({
   },
 });
 
-export const errorUsuari = schema.props.usuari.messages.default;
-export const errorClaudePas = schema.props.claudePas.messages.default;
+export const errorUser = schema.props.user.messages.default;
+export const errorKeyPass = schema.props.keyPass.messages.default;

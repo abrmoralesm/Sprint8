@@ -1,8 +1,14 @@
 import { cercaUsuariSignUp } from "./cercaUsuari";
 
-export const signUpF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega) => {
+export const signUpF = (
+  user,
+  keyPass,
+  dadesUsuaris,
+  setDadesUsuaris,
+  navega
+) => {
   const { usuaris } = dadesUsuaris;
-  const index = cercaUsuariSignUp(usuaris, usuari);
+  const index = cercaUsuariSignUp(usuaris, user);
 
   if (index === -1) {
     setDadesUsuaris((prev) => {
@@ -11,8 +17,8 @@ export const signUpF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega
       dadesUsuaris.usuaris = [
         ...prev.usuaris,
         {
-          usuari,
-          claudePas,
+          user,
+          keyPass,
           loguejat: true,
         },
       ];
@@ -25,10 +31,10 @@ export const signUpF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega
       return { ...dadesUsuaris };
     });
     navega(process.env.PUBLIC_URL + "/starships");
-    console.log(`New user ${usuari} has signed up!`);
+    console.log(`New user ${user} has signed up!`);
     return null;
   } else {
-    console.log(`User ${usuari} already exists!`);
-    return `User ${usuari} already exists!`;
+    console.log(`User ${user} already exists!`);
+    return `User ${user} already exists!`;
   }
 };

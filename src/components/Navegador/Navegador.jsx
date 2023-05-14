@@ -1,15 +1,14 @@
-import { Contenidor } from "./NavegadorStyled";
+import { Container } from "./NavegadorStyled";
 import EnvLink from "../common/EnvLink";
-import { useReducer, useEffect } from 'react';
-import { switchLinkNav } from '../../lib/utils/switchLinkNav';
+import { useReducer, useEffect } from "react";
+import { switchLinkNav } from "../../lib/utils/switchLinkNav";
 import { subscribe, unsubscribe } from "../../lib/utils/cutomEvents";
 
 const Navegador = () => {
-
-   const [state, dispatch] = useReducer(switchLinkNav, {
-     home: true,
-     starShips: false,
-   });
+  const [state, dispatch] = useReducer(switchLinkNav, {
+    home: true,
+    starShips: false,
+  });
   const { home, starShips } = state;
 
   useEffect(() => {
@@ -24,26 +23,27 @@ const Navegador = () => {
     };
   }, [state]);
 
-
   return (
-    <Contenidor>
+    <Container>
       <ul>
         <li
-          onClick={() => dispatch({  type: "homeClick" })}
-          className={home ? "actiu" : ""}>
-          <EnvLink className="link" to="">
-             Home
+          onClick={() => dispatch({ type: "homeClick" })}
+          className={home ? "actiu" : ""}
+        >
+          <EnvLink className='link' to=''>
+            Home
           </EnvLink>
         </li>
         <li
-          onClick={() => dispatch({  type: "starShipsClick"})}
-          className={starShips ? "actiu" : ""}>
-          <EnvLink className="link" to="/starships">
+          onClick={() => dispatch({ type: "starShipsClick" })}
+          className={starShips ? "actiu" : ""}
+        >
+          <EnvLink className='link' to='/starships'>
             Starships
           </EnvLink>
         </li>
       </ul>
-    </Contenidor>
+    </Container>
   );
 };
 export default Navegador;

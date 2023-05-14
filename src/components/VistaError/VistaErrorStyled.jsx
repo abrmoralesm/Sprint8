@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contenidor = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +23,7 @@ export const Contenidor = styled.div`
   }
 `;
 
-export const ContenidorImg = styled.div`
+export const ContainerImg = styled.div`
   margin: 30px;
   height: auto;
   width: 70rem;

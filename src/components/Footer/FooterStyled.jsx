@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contenidor = styled.div`
+export const Container = styled.div`
   margin-top: 6rem;
   background-color: ${({ theme }) => theme.colors.fonsFosc};
   display: flex;

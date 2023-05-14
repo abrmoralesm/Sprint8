@@ -1,36 +1,35 @@
 import { useEffect, useState } from "react";
 import { fetchAPI } from "../utils/fetchAPI";
 
-export const useFetchAPI = (url, pagina) => {
- 
-	const [starships, setStarships] = useState({
-    dades: [],
+export const useFetchAPI = (url, page) => {
+  const [starships, setStarships] = useState({
+    dates: [],
     loading: true,
     error: false,
   });
 
-  const setDades = (dades) =>
+  const setDades = (dates) =>
     setStarships((prev) => ({
-      dades: [...prev.dades, ...dades.results],
+      dates: [...prev.dates, ...dates.results],
       loading: false,
       error: false,
     }));
 
   const setError = (missatge) =>
     setStarships({
-      dades: [],
+      dates: [],
       loading: false,
       error: missatge,
     });
 
   useEffect(() => {
     const controller = new AbortController();
-    fetchAPI(url, pagina, setDades, setError, controller.signal);
+    fetchAPI(url, page, setDades, setError, controller.signal);
     return () => controller.abort();
-  }, [url, pagina]);
+  }, [url, page]);
 
   return {
-    dades: starships.dades,
+    dates: starships.dates,
     next: starships.next,
     loading: starships.loading,
     error: starships.error,

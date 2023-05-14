@@ -1,9 +1,9 @@
 import { ENDPOINTSAPI } from "../../lib/constants/endPointsAPI";
-import { Contenidor } from "./WellcomeStyled";
+import { Container } from "./WellcomeStyled";
 import EnvLink from "../common/EnvLink";
 
 const Wellcome = () => (
-  <Contenidor>
+  <Container>
     <div>
       <h1>Welcome to the Star Wars Website: A Journey Through the Galaxy</h1>
       <h2>
@@ -28,7 +28,7 @@ const Wellcome = () => (
     <EnvLink to='/starships' className='link'>
       <button>starships</button>
     </EnvLink>
-  </Contenidor>
+  </Container>
 );
 
 export default Wellcome;

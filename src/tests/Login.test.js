@@ -5,84 +5,84 @@ import { THEME } from "../lib/constants/theme";
 import AutenticacioContextProvider from "../context/autentitcacioContext";
 import Login from "../components/Login/Login";
 import { eventTests } from "../lib/utils/eventTests";
-import { errorUsuari, errorClaudePas } from "../lib/constants/validateSchema";
+import { errorUser, errorKeyPass } from "../lib/constants/validateSchema";
 
 beforeAll(() => {
-	console.log("Inici tests Login");
+  console.log("Inicio tests Login");
 });
 
 describe("Login testing", () => {
-	beforeEach(() => {
-		render(
-			<BrowserRouter>
-				<ThemeProvider theme={THEME}>
-					<AutenticacioContextProvider>
-						<Login />
-					</AutenticacioContextProvider>
-				</ThemeProvider>
-			</BrowserRouter>
-		);
-	});
+  beforeEach(() => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider theme={THEME}>
+          <AutenticacioContextProvider>
+            <Login />
+          </AutenticacioContextProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+  });
 
-	describe("Tests de valors inicials", () => {
-		test("Comprovar inputs buits a l'inici", () => {
-			expect(
-				screen.getByRole("textbox", {
-					name: /user/i,
-				}).value
-			).toBe("");
-			expect(screen.getByLabelText(/password/i).value).toBe("");
-		});
+  describe("Tests de valores iniciales", () => {
+    test("Comprobar inputs vacíos al inicio", () => {
+      expect(
+        screen.getByRole("textbox", {
+          name: /user/i,
+        }).value
+      ).toBe("");
+      expect(screen.getByLabelText(/password/i).value).toBe("");
+    });
 
-		test("Comprovar que tots els camps estan disponibles per rebre text", () => {
-			const { usuariInput, claudePasInput } = eventTests({
-				usuari: "Nom d'usuari X",
-				password: "Clau de Pas X",
-			});
-			expect(usuariInput.value).toBe("Nom d'usuari X");
-			expect(claudePasInput.value).toBe("Clau de Pas X");
-		});
-	});
+    test("Comprobar que todos los inputs están disponibles para escribir text", () => {
+      const { usuariInput, claudePasInput } = eventTests({
+        user: "Nombre de usuario X",
+        password: "Contraseña de X",
+      });
+      expect(usuariInput.value).toBe("Nombre de usuario X");
+      expect(claudePasInput.value).toBe("Contraseña de X");
+    });
+  });
 
-	describe("Tests de validació", () => {
-		test("Comprovar validació salta amb usuari incorrecte", () => {
-			expect(screen.queryByText(errorUsuari)).not.toBeInTheDocument();
-			eventTests(
-				{
-					usuari: "Nom d'usuari X........",
-					submit: "submit",
-				},
-				/open session/i
-			);
-			expect(screen.getByText(errorUsuari)).toBeInTheDocument();
-		});
+  describe("Tests de validación", () => {
+    test("Comprobar validación se activa con user incorrecto", () => {
+      expect(screen.queryByText(errorUser)).not.toBeInTheDocument();
+      eventTests(
+        {
+          user: "Nombre de usuario X........",
+          submit: "submit",
+        },
+        /open session/i
+      );
+      expect(screen.getByText(errorUser)).toBeInTheDocument();
+    });
 
-		test("Comprovar validació salta amb clau de pas incorrecta", () => {
-			expect(screen.queryByText(errorClaudePas)).not.toBeInTheDocument();
-			eventTests(
-				{
-					usuari: "NomUsuari",
-					password: "ClaudePas",
-					submit: "submit",
-				},
-				/open session/i
-			);
-			expect(screen.getByText(errorClaudePas)).toBeInTheDocument();
-		});
+    test("Comprobar validación se activa con contraseña incorrecta", () => {
+      expect(screen.queryByText(errorKeyPass)).not.toBeInTheDocument();
+      eventTests(
+        {
+          user: "NomUser",
+          password: "Password",
+          submit: "submit",
+        },
+        /open session/i
+      );
+      expect(screen.getByText(errorKeyPass)).toBeInTheDocument();
+    });
 
-		test("Comprovar validació no salta amb dades correctes", () => {
-			expect(screen.queryByText(errorUsuari)).not.toBeInTheDocument();
-			expect(screen.queryByText(errorClaudePas)).not.toBeInTheDocument();
-			eventTests(
-				{
-					usuari: "NomUsuarx",
-					password: "ClaudPas",
-					submit: "submit",
-				},
-				/open session/i
-			);
-			expect(screen.queryByText(errorUsuari)).not.toBeInTheDocument();
-			expect(screen.queryByText(errorClaudePas)).not.toBeInTheDocument();
-		});
-	});
+    test("Comprobar validación no se actica con datos correctos", () => {
+      expect(screen.queryByText(errorUser)).not.toBeInTheDocument();
+      expect(screen.queryByText(errorKeyPass)).not.toBeInTheDocument();
+      eventTests(
+        {
+          user: "NomUsuarx",
+          password: "Password",
+          submit: "submit",
+        },
+        /open session/i
+      );
+      expect(screen.queryByText(errorUser)).not.toBeInTheDocument();
+      expect(screen.queryByText(errorKeyPass)).not.toBeInTheDocument();
+    });
+  });
 });

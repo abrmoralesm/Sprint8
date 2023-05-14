@@ -5,10 +5,10 @@ import {
   FaTwitter,
   FaKickstarterK,
 } from "react-icons/fa";
-import { Contenidor } from "./FooterStyled";
+import { Container } from "./FooterStyled";
 
 const Footer = () => (
-  <Contenidor>
+  <Container>
     <p>More from Star Wars</p>
     <ul>
       <li>
@@ -57,7 +57,7 @@ const Footer = () => (
         <a href='helpdesk'>Star Wars Helpdesk</a>
       </li>
     </ul>
-  </Contenidor>
+  </Container>
 );
 
 export default Footer;

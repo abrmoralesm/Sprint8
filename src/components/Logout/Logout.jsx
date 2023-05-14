@@ -1,11 +1,10 @@
 import { useAutenticacioContext } from "../../context/autentitcacioContext";
 import { useEffect } from "react";
-import { Contenidor } from "./LogoutStyled";
+import { Container } from "./LogoutStyled";
 import { publish } from "../../lib/utils/cutomEvents";
 import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
-  
   const { logout, usuariLoguejat } = useAutenticacioContext();
   const navega = useNavigate();
 
@@ -21,10 +20,10 @@ const Logout = () => {
   }, [logout, usuariLoguejat, navega]);
 
   return (
-    <Contenidor>
+    <Container>
       <p>User has logged out...</p>
       <p>Make the force be with you!</p>
-    </Contenidor>
+    </Container>
   );
 };
 

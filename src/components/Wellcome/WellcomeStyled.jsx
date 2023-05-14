@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contenidor = styled.div`
+export const Container = styled.div`
   margin: 5rem auto;
   display: flex;
   flex-direction: column;

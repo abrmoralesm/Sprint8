@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
-import { Contenidor } from "../common/ContenidorPageStyled";
+import { Container } from "../common/ContainerPageStyled";
 import { useEffect } from "react";
 import { publish } from "../../lib/utils/cutomEvents";
-import DetallsStarship from "../../components/DetallsStarship/DetallsStarship.jsx";
+import ConfigStarship from "../../components/ConfigStarship/ConfigStarship.jsx";
 
 const Starship = () => {
   const { starshipId } = useParams();
   useEffect(() => publish("none"), []);
 
   return (
-    <Contenidor>
-      <DetallsStarship starshipId={starshipId} />
-    </Contenidor>
+    <Container>
+      <ConfigStarship starshipId={starshipId} />
+    </Container>
   );
 };
 

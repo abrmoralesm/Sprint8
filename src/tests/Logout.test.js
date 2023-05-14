@@ -22,7 +22,7 @@ describe("Logout testing", () => {
 		);
 	});
 
-	test("Comprovació del renderitzat de misstage de logout", async () => {
+	test("Comprobación del renderizado de mensage de logout", async () => {
 		expect(await screen.findByText(/logged out/i)).toBeInTheDocument();
 	});
 });

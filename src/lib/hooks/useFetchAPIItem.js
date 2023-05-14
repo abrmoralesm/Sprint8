@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchAPIItemData, fetchAPIItemImg } from '../utils/fetchApiItem';
+import { fetchAPIItemData, fetchAPIItemImg } from "../utils/fetchApiItem";
 
 export const useFetchAPIItem = (urlItem, urlItemImg) => {
-
   const [item, setItem] = useState({
-    dades: [],
+    dates: [],
     loading: true,
     error: false,
   });
@@ -14,53 +13,57 @@ export const useFetchAPIItem = (urlItem, urlItemImg) => {
     error: false,
   });
 
-const setDadesItem = (dades) =>
-  setItem({
-    dades,
-    loading: false,
-    error: false,
-  });
+  const setDadesItem = (dates) =>
+    setItem({
+      dates,
+      loading: false,
+      error: false,
+    });
 
-const setErrorDadesItem = (error) =>
-  setItem({
-    dades: [],
-    loading: false,
-    error: error.message,
-  });
+  const setErrorDadesItem = (error) =>
+    setItem({
+      dates: [],
+      loading: false,
+      error: error.message,
+    });
 
-const setImgItem = (src) =>
-  setImg({
-    src,
-    loading: false,
-    error: false,
-  });
+  const setImgItem = (src) =>
+    setImg({
+      src,
+      loading: false,
+      error: false,
+    });
 
-const setErrorImgItem = (srcNoImg) =>
-  setImg({
-    src: srcNoImg,
-    loading: false,
-    error: true,
-  });
+  const setErrorImgItem = (srcNoImg) =>
+    setImg({
+      src: srcNoImg,
+      loading: false,
+      error: true,
+    });
 
   useEffect(() => {
     const controller = new AbortController();
-    fetchAPIItemData(urlItem, setDadesItem, setErrorDadesItem, controller.signal);
+    fetchAPIItemData(
+      urlItem,
+      setDadesItem,
+      setErrorDadesItem,
+      controller.signal
+    );
     return () => controller.abort();
   }, [urlItem]);
 
-    useEffect(() => {
+  useEffect(() => {
     const controller = new AbortController();
     fetchAPIItemImg(urlItemImg, setImgItem, setErrorImgItem, controller.signal);
     return () => controller.abort();
   }, [urlItemImg]);
 
   return {
-    dadesItem: item.dades,
+    dadesItem: item.dates,
     loadingItem: item.loading,
     errorItem: item.error,
     imgItem: img.src,
     loadingImg: img.loading,
     errorImg: img.error,
-    
   };
 };

@@ -1,5 +1,5 @@
 import logo from "../../assets/img/logo-starwars.png";
-import { Contenidor } from "./CapçaleraStyled";
+import { Container } from "./HeaderStyled";
 import { useAutenticacioContext } from "../../context/autentitcacioContext";
 import EnvLink from "../common/EnvLink";
 
@@ -7,7 +7,7 @@ const Header = () => {
   const { usuariLoguejat } = useAutenticacioContext();
 
   return (
-    <Contenidor>
+    <Container>
       <div>
         <img src={logo} alt='logo Star Wars' />
       </div>
@@ -24,7 +24,7 @@ const Header = () => {
           <button>sign up</button>
         </EnvLink>
       </div>
-    </Contenidor>
+    </Container>
   );
 };
 export default Header;

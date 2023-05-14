@@ -1,7 +1,13 @@
 import { cercaUsuariLogIn } from "./cercaUsuari";
-export const loginF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega) => {
+export const loginF = (
+  user,
+  keyPass,
+  dadesUsuaris,
+  setDadesUsuaris,
+  navega
+) => {
   const { usuaris } = dadesUsuaris;
-  const index = cercaUsuariLogIn(usuaris, usuari, claudePas);
+  const index = cercaUsuariLogIn(usuaris, user, keyPass);
 
   if (index !== -1) {
     setDadesUsuaris((prev) => {
@@ -18,10 +24,10 @@ export const loginF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega)
       return { ...dadesUsuaris };
     });
     navega(process.env.PUBLIC_URL + "/starships");
-    console.log(`User ${usuari} logged in!`);
+    console.log(`User ${user} logged in!`);
     return null;
   } else {
-    console.log(`User ${usuari} incorrect user name or password`);
-    return `User ${usuari} incorrect user name or password!`;
+    console.log(`User ${user} incorrect user name or password`);
+    return `User ${user} incorrect user name or password!`;
   }
 };

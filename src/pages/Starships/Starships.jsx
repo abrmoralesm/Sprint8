@@ -1,15 +1,15 @@
-import { Contenidor } from "../common/ContenidorPageStyled";
+import { Container } from "../common/ContainerPageStyled";
 import { useEffect } from "react";
 import { publish } from "../../lib/utils/cutomEvents";
-import LlistaStarships from "../../components/LlistaStarships/LlistaStarships";
+import ListStarships from "../../components/ListStarships/ListStarships";
 
 const StarShips = () => {
   useEffect(() => publish("starShipsClick"), []);
 
   return (
-    <Contenidor>
-      <LlistaStarships />
-    </Contenidor>
+    <Container>
+      <ListStarships />
+    </Container>
   );
 };
 export default StarShips;

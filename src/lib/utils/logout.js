@@ -1,6 +1,6 @@
 export const logoutF = (usuariLoguejat, dadesUsuaris, setDadesUsuaris) => {
   const { usuaris } = dadesUsuaris;
-  const usuari = usuaris[usuariLoguejat].usuari;
+  const user = usuaris[usuariLoguejat].user;
   setDadesUsuaris((prev) => {
     dadesUsuaris.usuariLoguejat = null;
     dadesUsuaris.usuaris[usuariLoguejat].loguejat = false;
@@ -11,5 +11,5 @@ export const logoutF = (usuariLoguejat, dadesUsuaris, setDadesUsuaris) => {
     );
     return { ...dadesUsuaris };
   });
-  console.log(`User ${usuari} has logged out!`);
+  console.log(`User ${user} has logged out!`);
 };

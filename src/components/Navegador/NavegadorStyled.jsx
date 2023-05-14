@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Contenidor = styled.div`
+export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.fonsFosc};
   display: flex;
   justify-content: center;
