@@ -1,4 +1,4 @@
-export const cercaUsuariSignIn = (usuaris, usuari, claudePas) => {
+export const cercaUsuariLogIn = (usuaris, usuari, claudePas) => {
   return usuaris.findIndex(
     (usuariItem) =>
       usuariItem.usuari === usuari && usuariItem.claudePas === claudePas

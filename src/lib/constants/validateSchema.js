@@ -16,3 +16,6 @@ export const schema = new Schema({
       'Password must be 8 characters long, with letters, numbers and/or "_", "-"',
   },
 });
+
+export const errorUsuari = schema.props.usuari.messages.default;
+export const errorClaudePas = schema.props.claudePas.messages.default;

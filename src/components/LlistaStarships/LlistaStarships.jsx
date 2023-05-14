@@ -18,18 +18,16 @@ const LlistaStarships = () => {
     <div>
       {loading && <Missatge text={"loading data..."} />}
       {error && <Missatge text={"Error loading data:"} error={error} />}
-      <Contenidor>
-        {dades && !loading && !error && (
-          <>
-            <ul>
-              {dades.map((starship, index) => (
-                <LlistaItem key={index} starship={starship} />
-              ))}
-            </ul>
-            <Paginacio pagina={pagina} setPagina={setPagina} />
-          </>
-        )}
-      </Contenidor>
+      {dades && !loading && !error && (
+        <Contenidor>
+          <ul>
+            {dades.map((starship, index) => (
+              <LlistaItem key={index} starship={starship} />
+            ))}
+          </ul>
+          <Paginacio pagina={pagina} setPagina={setPagina} />
+        </Contenidor>
+      )}
     </div>
   );
 };

@@ -49,6 +49,12 @@ export const Contenidor = styled.div`
       outline: 0.1rem solid ${({ theme }) => theme.colors.vora};
       border-radius: 0.5rem;
     }
+    &[disabled] {
+      color: ${({ theme }) => theme.colors.deshabilitat};
+    }
+    &[disabled]:hover {
+      pointer-events: none;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.amplada.tauleta}) {

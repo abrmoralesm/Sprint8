@@ -20,27 +20,29 @@ const Login = () => {
       <div>
         <h2>Log in</h2>
         <form onSubmit={handleSubmit}>
-          {errorInvalid && <h3>{errorInvalid}</h3>}
+          {errorInvalid && <h3 className="missatge">{errorInvalid}</h3>}
           <label htmlFor='usuari'>
             User
             <input
               type='text'
+              id="usuari"
               name='usuari'
               onChange={(e) => setUsuari(e.target.value)}
               value={usuari}
             />
           </label>
-          {errorUsuari && <p>{errorUsuari}</p>}
-          <label htmlFor='usuari'>
+          {errorUsuari && <p className="missatge">{errorUsuari}</p>}
+          <label htmlFor='claudePas'>
             Password
             <input
-              type='pasword'
+              type='password'
+              id="claudePas"
               name='claudePas'
               onChange={(e) => setClaudePas(e.target.value)}
               value={claudePas}
             />
           </label>
-          {errorClaudePas && <p>{errorClaudePas}</p>}
+          {errorClaudePas && <p className="missatge">{errorClaudePas}</p>}
           <button type='submit'>Open Session</button>
         </form>
         <div>

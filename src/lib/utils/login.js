@@ -1,7 +1,7 @@
-import { cercaUsuariSignIn } from "./cercaUsuari";
+import { cercaUsuariLogIn } from "./cercaUsuari";
 export const loginF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega) => {
   const { usuaris } = dadesUsuaris;
-  const index = cercaUsuariSignIn(usuaris, usuari, claudePas);
+  const index = cercaUsuariLogIn(usuaris, usuari, claudePas);
 
   if (index !== -1) {
     setDadesUsuaris((prev) => {
@@ -21,7 +21,7 @@ export const loginF = (usuari, claudePas, dadesUsuaris, setDadesUsuaris, navega)
     console.log(`User ${usuari} logged in!`);
     return null;
   } else {
-    console.log(`User ${usuari} doesn't exist!`);
-    return `User ${usuari} doesn't exist!`;
+    console.log(`User ${usuari} incorrect user name or password`);
+    return `User ${usuari} incorrect user name or password!`;
   }
 };

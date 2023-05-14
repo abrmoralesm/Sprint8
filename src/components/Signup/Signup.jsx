@@ -24,23 +24,25 @@ const SignUp = () => {
             User
             <input
               type='text'
+              id='usuari'
               name='usuari'
               onChange={(e) => setUsuari(e.target.value)}
               value={usuari}
             />
           </label>
           {errorUsuari && <p className='missatge'>{errorUsuari}</p>}
-          <label htmlFor='usuari'>
+          <label htmlFor='claudePas'>
             Password
             <input
               type='password'
+              id='claudePas'
               name='claudePas'
               onChange={(e) => setClaudePas(e.target.value)}
               value={claudePas}
             />
           </label>
           {errorClaudePas && <p className='missatge'>{errorClaudePas}</p>}
-          <button type='submit'>Create User</button>
+          <button name='submit' id='submit'>Create User</button>
         </form>
         <div>
           <p>Already have an account?</p>

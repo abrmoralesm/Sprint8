@@ -3,7 +3,7 @@ import { Contenidor } from "./CapçaleraStyled";
 import { useAutenticacioContext } from "../../context/autentitcacioContext";
 import EnvLink from "../common/EnvLink";
 
-const Capçalera = () => {
+const Header = () => {
   const { usuariLoguejat } = useAutenticacioContext();
 
   return (
@@ -26,5 +26,5 @@ const Capçalera = () => {
       </div>
     </Contenidor>
   );
-        };
-export default Capçalera;
+};
+export default Header;
